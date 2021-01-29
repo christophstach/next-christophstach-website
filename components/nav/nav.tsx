@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import NavigationItem from './navigation-item'
+import NavItem from './nav-item'
 
 interface Item {
   name: string

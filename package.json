@@ -7,18 +7,27 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "lint": "eslint --ext js,jsx,ts,tsx --fix"
+    "lint": "eslint --ext js,jsx,ts,tsx --fix",
+    "codegen": "graphql-codegen",
+    "postinstall": "yarn codegen"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "autoprefixer": "^10.0.4",
+    "graphql": "^15.5.0",
+    "lodash": "^4.17.20",
     "next": "latest",
     "next-pwa": "^5.0.4",
+    "next-with-apollo": "^5.1.0",
     "postcss": "^8.1.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/typescript-resolvers": "^1.18.1",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",

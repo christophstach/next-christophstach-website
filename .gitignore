@@ -45,3 +45,5 @@ node_modules
 
 # macOS meta stuffs
 .DS_Store
+
+graphcms.types.d.ts

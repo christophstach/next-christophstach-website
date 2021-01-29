@@ -8,7 +8,7 @@ interface Props {
   mode?: 'base' | 'sm'
 }
 
-const NavigationItem: React.FC<Props> = (props) => {
+const NavItem: React.FC<Props> = (props) => {
   const { asPath } = useRouter()
 
   const mode = props.mode ? props.mode : 'base'
@@ -36,4 +36,4 @@ const NavigationItem: React.FC<Props> = (props) => {
   )
 }
 
-export default NavigationItem
+export default NavItem
