@@ -44,3 +44,5 @@ node_modules
 **/public/sw**
 
 /generated
+
+/.idea
