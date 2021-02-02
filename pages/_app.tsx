@@ -6,7 +6,7 @@ import '../styles/globals.css'
 import { useApollo } from '../lib/apolloClient'
 import Head from 'next/head'
 
-function App({ Component, pageProps }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (
@@ -36,4 +36,4 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
   )
 }
 
-export default App
+export default MyApp

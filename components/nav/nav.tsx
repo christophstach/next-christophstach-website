@@ -6,7 +6,7 @@ interface Item {
   href: string
 }
 
-const Nav: React.FC = (props) => {
+const Nav: React.FC = () => {
   const [open, setOpen] = useState(false)
 
   const navigationItems: Item[] = [
@@ -30,12 +30,21 @@ const Nav: React.FC = (props) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <img
-                  className="h-8 w-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                  alt="Workflow"
-                />
+              <div className="flex-shrink-0 w-8">
+                <svg
+                  className="text-blue-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
+                </svg>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
@@ -112,14 +121,6 @@ const Nav: React.FC = (props) => {
           </div>
         </div>
       </nav>
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">HEAAADER</h1>
-        </div>
-      </header>
-      <main>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">{props.children}</div>
-      </main>
     </div>
   )
 }
