@@ -1,22 +1,18 @@
-import type { AppProps /*, AppContext */ } from 'next/app'
+import type { AppProps } from 'next/app'
 
-import { ApolloClient, InMemoryCache } from '@apollo/client'
 import { ApolloProvider } from '@apollo/client'
 
 import '../styles/globals.css'
-import withApollo from 'next-with-apollo'
+import { useApollo } from '../lib/apolloClient'
 
-function App({ Component, pageProps, apollo }: AppProps): JSX.Element {
+function App({ Component, pageProps }: AppProps): JSX.Element {
+  const apolloClient = useApollo(pageProps.initialApolloState)
+
   return (
-    <ApolloProvider client={apollo}>
+    <ApolloProvider client={apolloClient}>
       <Component {...pageProps} />
     </ApolloProvider>
   )
 }
 
-export default withApollo(({ initialState }) => {
-  return new ApolloClient({
-    uri: 'https://mysite.com/graphql',
-    cache: new InMemoryCache().restore(initialState || {}),
-  })
-})(App)
+export default App

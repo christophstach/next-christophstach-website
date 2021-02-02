@@ -1,0 +1,27 @@
+{
+  "schema": "https://api-eu-central-1.graphcms.com/v2/ckkh9l8ttiihy01xyadu60cri/master",
+  "documents": "graphql/**/*.graphql",
+  "extensions": {
+    "endpoints": {
+      "GraphCMS Schema": {
+        "url": "https://api-eu-central-1.graphcms.com/v2/ckkh9l8ttiihy01xyadu60cri/master",
+        "introspect": true
+      }
+    },
+    "codegen": {
+      "hooks": {
+        "beforeDone": [
+          "yarn lint"
+        ]
+      },
+      "generates": {
+        "generated/graphcms.codegen.ts": {
+          "plugins": [
+            "typescript",
+            "typescript-operations"
+          ]
+        }
+      }
+    }
+  }
+}

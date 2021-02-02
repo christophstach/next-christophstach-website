@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import NavItem from './nav-item'
+import NavItem from '../nav-item/nav-item'
 
 interface Item {
   name: string
   href: string
 }
 
-const Navigation: React.FC = (props) => {
+const Nav: React.FC = (props) => {
   const [open, setOpen] = useState(false)
 
   const navigationItems: Item[] = [
@@ -41,7 +41,7 @@ const Navigation: React.FC = (props) => {
                 <div className="ml-10 flex items-baseline space-x-4">
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   {navigationItems.map((item, idx) => (
-                    <NavigationItem key={idx} href={item.href} text={item.name} />
+                    <NavItem key={idx} href={item.href} text={item.name} />
                   ))}
                 </div>
               </div>
@@ -107,7 +107,7 @@ const Navigation: React.FC = (props) => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
             {navigationItems.map((item, idx) => (
-              <NavigationItem key={idx} href={item.href} text={item.name} mode="sm" />
+              <NavItem key={idx} href={item.href} text={item.name} mode="sm" />
             ))}
           </div>
         </div>
@@ -124,4 +124,4 @@ const Navigation: React.FC = (props) => {
   )
 }
 
-export default Navigation
+export default Nav

@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "lint": "eslint --ext js,jsx,ts,tsx --fix",
-    "codegen": "graphql-codegen",
-    "postinstall": "yarn codegen"
+    "lint": "eslint . --ext js,jsx,ts,tsx --fix",
+    "codegen": "graphql-codegen && yarn lint",
+    "postinstall": "yarn codegen",
+    "prestart": "yarn codegen",
+    "predev": "yarn codegen"
   },
   "dependencies": {
     "@apollo/client": "^3.3.7",
@@ -18,7 +20,6 @@
     "lodash": "^4.17.20",
     "next": "latest",
     "next-pwa": "^5.0.4",
-    "next-with-apollo": "^5.1.0",
     "postcss": "^8.1.10",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -26,7 +27,8 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.1",
-    "@graphql-codegen/typescript-resolvers": "^1.18.1",
+    "@graphql-codegen/typescript": "^1.20.2",
+    "@graphql-codegen/typescript-operations": "^1.17.14",
     "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",

@@ -1,0 +1,6 @@
+query getAllSkills {
+  skills {
+    id
+    name
+  }
+}

@@ -43,7 +43,4 @@ node_modules
 **/public/workbox**
 **/public/sw**
 
-# macOS meta stuffs
-.DS_Store
-
-graphcms.types.d.ts
+/generated
