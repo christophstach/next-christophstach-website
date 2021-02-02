@@ -9,6 +9,7 @@ module.exports = {
         'node_modules/*',
         '.next/*',
         '.out/*',
+        'out/*',
         '!.prettierrc.js',
         'public/sw.js',
         'public/workbox-*.js'

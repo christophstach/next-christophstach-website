@@ -6,6 +6,7 @@ import { initializeApollo } from '../lib/apolloClient'
 import GET_ALL_SKILLS from '../graphql/operations/getAllSkills.graphql'
 import { useQuery } from '@apollo/client'
 import { GetAllSkillsQuery } from '../generated/graphcms.codegen'
+import Badge from '../components/badge/badge'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
@@ -37,14 +38,7 @@ const ProfessionalExperience: NextPage = () => {
           <div>Loading...</div>
         ) : (
           data?.skills.map((skill) => {
-            return (
-              <span
-                className="bg-blue-400 rounded-xl px-3 mx-1 font-bold text-xs border-blue-400 text-white border-2"
-                key={skill.id}
-              >
-                {skill.name}
-              </span>
-            )
+            return <Badge key={skill.id}>{skill.name}</Badge>
           })
         )}
       </div>
