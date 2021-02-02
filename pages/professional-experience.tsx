@@ -38,7 +38,11 @@ const ProfessionalExperience: NextPage = () => {
           <div>Loading...</div>
         ) : (
           data?.skills.map((skill) => {
-            return <Badge key={skill.id}>{skill.name}</Badge>
+            return (
+              <>
+                <Badge key={skill.id}>{skill.name}</Badge>{' '}
+              </>
+            )
           })
         )}
       </div>
