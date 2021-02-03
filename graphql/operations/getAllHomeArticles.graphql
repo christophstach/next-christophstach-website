@@ -2,6 +2,11 @@ query getAllHomeArticles {
     homeArticles {
         id
         title
+        author {
+            firstName
+            lastName
+        }
+        createdAt
         content
     }
 }

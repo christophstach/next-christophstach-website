@@ -19,8 +19,8 @@ const Header: React.FC<Props> = (props) => {
       <div className="relative w-32 h-32 overflow-hidden border-4 border-white border-solid rounded-full">
         <Image src="/images/me.jpg" alt="Profile Avatar" layout="fill" objectFit="cover" />
       </div>
-      <h1 className="mb-3 text-4xl font-bold text-center text-white">{props.header}</h1>
-      <h2 className="text-2xl font-bold text-center text-white">{props.subHeader}</h2>
+      <div className="mb-3 text-4xl font-bold text-center text-white">{props.header}</div>
+      <div className="text-2xl font-bold text-center text-white">{props.subHeader}</div>
     </header>
   )
 }

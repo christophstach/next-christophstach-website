@@ -7,6 +7,7 @@ import { initializeApollo } from '../lib/apolloClient'
 import { GetAllHomeArticlesQuery } from '../generated/graphcms.codegen'
 import { useQuery } from '@apollo/client'
 import markdownToHtml from '../lib/markdownToHtml'
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
@@ -51,7 +52,14 @@ const Home: NextPage = () => {
         articles.map((article) => {
           return (
             <article key={article.id} className="mx-auto prose lg:prose-xl prose-primary">
-              <h3>{article.title}</h3>
+              <h1>{article.title}</h1>
+              <small className="block text-gray-400">
+                {`
+                    ${article.author?.firstName}
+                    ${article.author?.firstName}
+                    ${formatDistance(subDays(new Date(), 3), new Date(article.createdAt))}
+                  `}
+              </small>
 
               <div
                 dangerouslySetInnerHTML={{
