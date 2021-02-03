@@ -4,7 +4,7 @@ import Navigation from '../components/nav/nav'
 
 const Default: React.FC = (props) => {
   return (
-    <div className="default-layout">
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -13,8 +13,8 @@ const Default: React.FC = (props) => {
         header="Christoph Stach"
         subHeader="Frontend Engineer - Web Developer - Software Engineer - Full Stack Developer"
       />
-      <main>{props.children}</main>
-    </div>
+      <main className="px-5 py-10 mx-auto max-w-7xl">{props.children}</main>
+    </>
   )
 }
 

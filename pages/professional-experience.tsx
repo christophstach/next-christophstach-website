@@ -10,14 +10,13 @@ import Skills from '../components/skills/skills'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
-
-  await apolloClient.query({ query: GET_ALL_SKILLS })
+  await apolloClient.query<GetAllSkillsQuery>({ query: GET_ALL_SKILLS })
 
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
     },
-    revalidate: true,
+    revalidate: 1,
   }
 }
 
@@ -27,6 +26,7 @@ const ProfessionalExperience: NextPage = () => {
   if (error) {
     alert(error)
   }
+
   return (
     <Default>
       <Head>

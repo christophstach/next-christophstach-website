@@ -1,0 +1,7 @@
+query getAllHomeArticles {
+    homeArticles {
+        id
+        title
+        content
+    }
+}
