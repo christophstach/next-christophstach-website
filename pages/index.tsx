@@ -7,7 +7,7 @@ import { initializeApollo } from '../lib/apolloClient'
 import { GetAllHomeArticlesQuery } from '../generated/graphcms.codegen'
 import { useQuery } from '@apollo/client'
 import markdownToHtml from '../lib/markdownToHtml'
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { formatDistance, subDays } from 'date-fns'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
