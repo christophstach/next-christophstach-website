@@ -55,10 +55,10 @@ const Home: NextPage = () => {
               <h1>{article.title}</h1>
               <small className="block text-gray-400">
                 {`
-                    ${article.author?.firstName}
-                    ${article.author?.firstName}
-                    ${formatDistance(subDays(new Date(), 3), new Date(article.createdAt))}
-                  `}
+                  ${article.author?.firstName}
+                  ${article.author?.firstName}
+                  ${formatDistance(subDays(new Date(), 3), new Date(article.createdAt))}
+                `}
               </small>
 
               <div
