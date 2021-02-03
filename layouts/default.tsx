@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Header from '../components/header/header'
 import Navigation from '../components/nav/nav'
 
 const Default: React.FC = (props) => {
@@ -8,10 +9,10 @@ const Default: React.FC = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <div className="gradient h-60 flex flex-col pt-10">
-        <h1>Christoph Stach</h1>
-        <h2>Frontend Engineer - Web Developer - Software Engineer - Full Stack Developer</h2>
-      </div>
+      <Header
+        header="Christoph Stach"
+        subHeader="Frontend Engineer - Web Developer - Software Engineer - Full Stack Developer"
+      />
       <main>{props.children}</main>
     </div>
   )

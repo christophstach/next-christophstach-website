@@ -27,7 +27,7 @@ const Nav: React.FC = () => {
   return (
     <div>
       <nav className="bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 w-8">
@@ -47,7 +47,7 @@ const Nav: React.FC = () => {
                 </svg>
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
+                <div className="flex items-baseline ml-10 space-x-4">
                   {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                   {navigationItems.map((item, idx) => (
                     <NavItem key={idx} href={item.href} text={item.name} />
@@ -56,10 +56,10 @@ const Nav: React.FC = () => {
               </div>
             </div>
 
-            <div className="-mr-2 flex md:hidden">
+            <div className="flex -mr-2 md:hidden">
               {/* Mobile menu button */}
               <button
-                className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                className="inline-flex items-center justify-center p-2 text-gray-400 bg-gray-800 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 onClick={() => setOpen(!open)}
               >
                 <span className="sr-only">Open main menu</span>
