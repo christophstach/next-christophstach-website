@@ -3,6 +3,16 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      margin: {
+        '-1px': '-1px',
+        '-2px': '-2px',
+        '-4px': '-4px',
+        '-8px': '-8px',
+        '1px': '1px',
+        '2px': '2px',
+        '4px': '4px',
+        '8px': '8px',
+      },
       colors: {
         primary: {
             100: "#ccedf1",
