@@ -28,7 +28,7 @@ const Nav: React.FC = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0 w-8">
                 <svg
-                  className="text-primary-600"
+                  className="text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
