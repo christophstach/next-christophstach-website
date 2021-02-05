@@ -67,7 +67,7 @@ const Timeline: React.FC<Props> = (props) => {
                     {item.type && iconMap[item.type]}
                   </div>
                 </div>
-                <div className="p-6 ml-auto mr-16 prose-sm prose shadow">
+                <div className="p-6 ml-auto mr-16 prose-sm prose shadow" style={{ width: '65ch' }}>
                   <h3>{item.title}</h3>
                   <i className="text-primary-500">{item.place}</i>
 
