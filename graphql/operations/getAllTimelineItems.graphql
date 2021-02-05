@@ -1,0 +1,12 @@
+query getAllTimelineItems {
+  timelineItems(orderBy: fromDate_DESC) {
+    id
+    title
+    place
+    location
+    content
+    fromDate
+    toDate
+    type
+  }
+}

@@ -15,24 +15,20 @@ const Nav: React.FC = () => {
       href: '/',
     },
     {
-      name: 'Professional Experience',
-      href: '/professional-experience',
-    },
-    {
-      name: 'Education',
-      href: '/education',
+      name: 'Résumé',
+      href: '/resume',
     },
   ]
 
   return (
     <div>
-      <nav className="bg-gray-800">
+      <nav className="bg-gray-50">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0 w-8">
                 <svg
-                  className="text-blue-600"
+                  className="text-primary-600"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

@@ -6,7 +6,7 @@ const LinkedIn: React.FC<Props> = (props) => {
   return (
     <a href={props.url}>
       <svg
-        className="w-10 h-10 p-2 mx-1 text-white border-2 border-white border-solid rounded-full hover:text-gray-200 hover:border-gray-200"
+        className="w-10 h-10 p-2 mx-1 text-white border-2 border-white border-solid rounded-full hover:text-gray-100 hover:border-gray-100"
         viewBox="0 0 24 24"
       >
         <path

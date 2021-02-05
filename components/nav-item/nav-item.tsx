@@ -17,11 +17,11 @@ const NavItem: React.FC<Props> = (props) => {
 
   if (mode === 'base') {
     activeClass = `bg-gray-900 text-white px-3 py-2 rounded-md text-base font-medium`
-    normalClass = `text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`
+    normalClass = `text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`
   } else if (mode === 'sm') {
     activeClass = 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
     normalClass =
-      'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+      'text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
   }
 
   // pages/index.js will be matched via props.href

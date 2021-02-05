@@ -1,8 +1,3 @@
-import Image from 'next/image'
-import GitHub from '../social-links/github/github'
-import LinkedIn from '../social-links/linkedin/linkedin'
-import Xing from '../social-links/xing/xing'
-
 interface Props {
   header: string
   subHeader: string
@@ -10,17 +5,13 @@ interface Props {
 
 const Header: React.FC<Props> = (props) => {
   return (
-    <header className="flex flex-col items-center p-16 bg-gradient-to-b from-primary-400 to-primary-700">
-      <div className="flex mb-2">
-        <GitHub url="https://github.com/christophstach" />
-        <Xing url="https://www.xing.com/profile/Christoph_Stach" />
-        <LinkedIn url="https://www.linkedin.com/in/christoph-stach-7586b958" />
+    <header className="flex flex-col items-center py-16 bg-gray-50">
+      <div className="mb-10 font-bold text-center text-transparent text-7xl md:text-8xl bg-gradient-to-r from-primary-300 to-primary-800 bg-clip-text">
+        {props.header}
       </div>
-      <div className="relative w-32 h-32 overflow-hidden border-4 border-white border-solid rounded-full">
-        <Image src="/images/me.jpg" alt="Profile Avatar" layout="fill" objectFit="cover" />
+      <div className="pb-4 text-3xl font-bold text-center text-transparent md:text-4xl bg-gradient-to-r from-primary-300 to-primary-800 bg-clip-text">
+        {props.subHeader}
       </div>
-      <div className="mb-3 text-4xl font-bold text-center text-white">{props.header}</div>
-      <div className="text-2xl font-bold text-center text-white">{props.subHeader}</div>
     </header>
   )
 }
