@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       width: {
         '65ch': '65ch',
-        '100vw': '100vw'
+        '100vw': '100vw',
+        'min-100vw-6rem-or-65ch': 'min(calc(100vw - 6rem), 65ch)'
       },
       margin: {
         '-65ch-10': 'calc(-65ch - 2.5rem)',

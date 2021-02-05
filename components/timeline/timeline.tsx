@@ -37,7 +37,7 @@ const Timeline: React.FC<Props> = (props) => {
 
   return (
     <div className="relative">
-      <div className="box-content relative w-0 border-4 border-primary-500 left-4 md:left-1/2">
+      <div className="box-content relative w-0 border-4 border-primary-500 left-4 xl:left-1/2">
         {items.map((item, idx) => {
           return (
             <div className="relative pt-20" key={item.id}>
@@ -59,7 +59,7 @@ const Timeline: React.FC<Props> = (props) => {
               <div
                 className={`
                   absolute ml-10 -mt-10 text-gray-400 whitespace-nowrap
-                  ${idx % 2 === 1 ? `md:-ml-65ch-14 md:w-65ch text-right` : `md:ml-14`}
+                  ${idx % 2 === 1 ? `xl:-ml-65ch-14 xl:w-65ch text-right` : `xl:ml-14`}
                 `}
               >
                 {`
@@ -70,8 +70,8 @@ const Timeline: React.FC<Props> = (props) => {
 
               <div
                 className={`
-                  w-56 p-4 ml-10 md:ml-14 prose-sm prose shadow md:prose-md sm:w-65ch
-                  ${idx % 2 === 1 && `md:-ml-65ch-14`}
+                  w-min-100vw-6rem-or-65ch p-4 ml-10 xl:ml-14 prose-sm prose shadow xl:prose-md sm:w-65ch
+                  ${idx % 2 === 1 && `xl:-ml-65ch-14`}
                 `}
               >
                 <h3>{item.title}</h3>
