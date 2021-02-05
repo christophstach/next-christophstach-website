@@ -4,7 +4,14 @@ module.exports = {
   theme: {
 
     extend: {
+      width: {
+        '65ch': '65ch',
+        '100vw': '100vw'
+      },
       margin: {
+        '-65ch-10': 'calc(-65ch - 2.5rem)',
+        '-65ch-12': 'calc(-65ch - 3rem)',
+        '-65ch-14': 'calc(-65ch - 3.5rem)',
         '-1px': '-1px',
         '-2px': '-2px',
         '-4px': '-4px',

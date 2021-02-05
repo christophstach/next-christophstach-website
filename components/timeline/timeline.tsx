@@ -1,10 +1,9 @@
+import { format } from 'date-fns'
 import { TimelineItem, TimelineItemType } from '../../generated/graphcms.codegen'
 import markdownToHtml from '../../lib/markdownToHtml'
 import AcademicCap from '../icons/academic-cap/academic-cap'
 import Beaker from '../icons/beaker/beaker'
 import Briefcase from '../icons/briefcase/briefcase'
-
-import { format } from 'date-fns'
 
 interface Props {
   items: Partial<TimelineItem>[]
@@ -38,46 +37,56 @@ const Timeline: React.FC<Props> = (props) => {
 
   return (
     <div className="relative">
-      <div className="absolute h-full border-r-4 border-solid border-primary-500 left-1/2"></div>
-      {items.map((item, idx) => {
-        return (
-          <div key={idx} className="relative py-5 ">
-            <div className={`${idx % 2 === 0 ? `` : `left-1/2`}  w-1/2 box-border relative`}>
-              <div className="flex flex-col">
+      <div className="box-content relative w-0 border-4 border-primary-500 left-4 md:left-1/2">
+        {items.map((item, idx) => {
+          return (
+            <div className="relative pt-20" key={item.id}>
+              <div
+                className={`
+                  absolute
+                  w-16 
+                  h-16
+                  p-2
+                  top-20
+                  -left-8
+                  text-white
+                  rounded-full ${item.type && colorMap[item.type]}
+                `}
+              >
+                {item.type && iconMap[item.type]}
+              </div>
+
+              <div
+                className={`
+                  absolute ml-10 -mt-10 text-gray-400 whitespace-nowrap
+                  ${idx % 2 === 1 ? `md:-ml-65ch-14 md:w-65ch text-right` : `md:ml-14`}
+                `}
+              >
+                {`
+                  ${format(new Date(item.fromDate), 'MMMM yyyy')}
+                  ${item.toDate ? ` – ${format(new Date(item.toDate), 'MMMM yyyy')}` : ``}
+                `}
+              </div>
+
+              <div
+                className={`
+                  w-56 p-4 ml-10 md:ml-14 prose-sm prose shadow md:prose-md sm:w-65ch
+                  ${idx % 2 === 1 && `md:-ml-65ch-14`}
+                `}
+              >
+                <h3>{item.title}</h3>
+                <small className="italic text-primary-500">{item.place}</small>
+
                 <div
-                  style={
-                    idx % 2 === 0 ? { left: 'calc(100% - 22px)' } : { right: 'calc(100% - 26px)' }
-                  }
-                  className={`${
-                    idx % 2 === 0 ? `flex-row-reverse` : `flex-row`
-                  } absolute flex items-center whitespace-nowrap`}
-                >
-                  <small className={`${idx % 2 === 0 ? `ml-6` : `mr-10`}  text-gray-400`}>
-                    {`
-                      ${format(new Date(item.fromDate), 'MMMM yyyy')} 
-                      ${item.toDate ? ` – ${format(new Date(item.toDate), 'MMMM yyyy')}` : ``}
-                    `}
-                  </small>
-
-                  <div
-                    className={`w-12 h-12 p-2 text-white rounded-full ${
-                      item.type && colorMap[item.type]
-                    }`}
-                  >
-                    {item.type && iconMap[item.type]}
-                  </div>
-                </div>
-                <div className="p-6 ml-auto mr-16 prose-sm prose shadow" style={{ width: '65ch' }}>
-                  <h3>{item.title}</h3>
-                  <i className="text-primary-500">{item.place}</i>
-
-                  <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-                </div>
+                  dangerouslySetInnerHTML={{
+                    __html: item.content,
+                  }}
+                ></div>
               </div>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }
