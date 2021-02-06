@@ -1,12 +1,13 @@
+import { useQuery } from '@apollo/client'
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
+
 import Timeline from '../components/timeline/timeline'
 import { GetAllTimelineItemsQuery } from '../generated/graphcms.codegen'
+import GET_ALL_TIMELINE_ITEMS from '../graphql/operations/getAllTimelineItems.gql'
 import Default from '../layouts/default'
 import { initializeApollo } from '../lib/apolloClient'
-import GET_ALL_TIMELINE_ITEMS from '../graphql/operations/getAllTimelineItems.graphql'
-import { useQuery } from '@apollo/client'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()

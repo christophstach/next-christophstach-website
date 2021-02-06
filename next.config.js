@@ -8,7 +8,7 @@ module.exports = withPWA({
   },
   webpack: (config) => {
     config.module.rules.push({
-      test: /\.(graphql)$/,
+      test: /\.(gql)$/,
       exclude: /node_modules/,
       loader: 'graphql-tag/loader',
     });

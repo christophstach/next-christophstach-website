@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+
 import { TimelineItem, TimelineItemType } from '../../generated/graphcms.codegen'
 import markdownToHtml from '../../lib/markdownToHtml'
 import AcademicCap from '../icons/academic-cap/academic-cap'

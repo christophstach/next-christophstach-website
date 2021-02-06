@@ -1,12 +1,13 @@
+import { useQuery } from '@apollo/client'
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
+
+import Skills from '../components/skills/skills'
+import { GetAllSkillsQuery } from '../generated/graphcms.codegen'
+import GET_ALL_SKILLS from '../graphql/operations/getAllSkills.gql'
 import Default from '../layouts/default'
 import { initializeApollo } from '../lib/apolloClient'
-import GET_ALL_SKILLS from '../graphql/operations/getAllSkills.graphql'
-import { useQuery } from '@apollo/client'
-import { GetAllSkillsQuery } from '../generated/graphcms.codegen'
-import Skills from '../components/skills/skills'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()

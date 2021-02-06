@@ -1,10 +1,10 @@
-import type { AppProps } from 'next/app'
+import '../styles/globals.css'
 
 import { ApolloProvider } from '@apollo/client'
-
-import '../styles/globals.css'
-import { useApollo } from '../lib/apolloClient'
+import type { AppProps } from 'next/app'
 import Head from 'next/head'
+
+import { useApollo } from '../lib/apolloClient'
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = useApollo(pageProps.initialApolloState)

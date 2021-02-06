@@ -4,6 +4,13 @@ module.exports = {
         node: true,
         es6: true,
     },
+    plugins: ['simple-import-sort'],
+    rules: {
+        // simple-import-sort config
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'sort-imports': 'off',
+    },
     parserOptions: {ecmaVersion: 8}, // to enable features such as async/await
     ignorePatterns: [
         'node_modules/*',

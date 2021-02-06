@@ -1,13 +1,14 @@
+import { useQuery } from '@apollo/client'
+import { formatDistance, subDays } from 'date-fns'
 import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
-import Default from '../layouts/default'
-import GET_ALL_HOME_ARTICLES from '../graphql/operations/getAllHomeArticles.graphql'
-import { initializeApollo } from '../lib/apolloClient'
+
 import { GetAllHomeArticlesQuery } from '../generated/graphcms.codegen'
-import { useQuery } from '@apollo/client'
+import GET_ALL_HOME_ARTICLES from '../graphql/operations/getAllHomeArticles.gql'
+import Default from '../layouts/default'
+import { initializeApollo } from '../lib/apolloClient'
 import markdownToHtml from '../lib/markdownToHtml'
-import { formatDistance, subDays } from 'date-fns'
 
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
