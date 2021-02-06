@@ -48,7 +48,7 @@ const Default: React.FC = (props) => {
 
       <footer className="p-3 bg-gray-300">
         <div className="flex justify-center mx-auto max-w-7xl">
-          <LinkedIn url="https://www.linkedin.com/in/christoph-stach-7586b958/" />
+          <LinkedIn url="https://www.linkedin.com/in/christoph-stach-7586b958" />
           <Xing url="https://www.xing.com/profile/Christoph_Stach" />
           <GitHub url="https://github.com/christophstach" />
         </div>
