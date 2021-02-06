@@ -10,8 +10,8 @@ const variants1: Variants = {
   visible: {
     scale: 1,
     transition: {
-      delay: 0.5,
-      duration: 1,
+      delay: 0.0,
+      duration: 0.5,
     },
   },
 }
@@ -21,8 +21,8 @@ const variants2: Variants = {
   visible: {
     scale: 1,
     transition: {
-      delay: 1.5,
-      duration: 1,
+      delay: 0.5,
+      duration: 0.5,
     },
   },
 }
