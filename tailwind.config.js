@@ -110,5 +110,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('tailwindcss-border-gradients')(),
+    require('tailwindcss-textshadow'),
   ],
 }
