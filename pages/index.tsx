@@ -47,30 +47,32 @@ const Home: NextPage = () => {
         <title>Christoph Stach: Home</title>
       </Head>
 
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        articles.map((article) => {
-          return (
-            <article key={article.id} className="mx-auto prose lg:prose-xl prose-primary">
-              <h1>{article.title}</h1>
-              <small className="block text-gray-400">
-                {`
-                  ${article.author?.firstName}
-                  ${article.author?.lastName} - 
-                  ${formatDistance(subDays(new Date(), 3), new Date(article.createdAt))}
-                `}
-              </small>
+      <div className="py-10">
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          articles.map((article) => {
+            return (
+              <article key={article.id} className="mx-auto prose lg:prose-xl prose-primary">
+                <h1>{article.title}</h1>
+                <small className="block text-gray-400">
+                  {`
+                    ${article.author?.firstName}
+                    ${article.author?.lastName} - 
+                    ${formatDistance(subDays(new Date(), 3), new Date(article.createdAt))}
+                  `}
+                </small>
 
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: article.content,
-                }}
-              ></div>
-            </article>
-          )
-        })
-      )}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: article.content,
+                  }}
+                ></div>
+              </article>
+            )
+          })
+        )}
+      </div>
     </Default>
   )
 }
