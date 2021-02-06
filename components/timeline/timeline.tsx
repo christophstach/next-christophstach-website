@@ -38,7 +38,7 @@ const Timeline: React.FC<Props> = (props) => {
 
   return (
     <div className="relative">
-      <div className="box-content relative w-0 border-4 border-primary-500 left-4 xl:left-1/2">
+      <div className="box-content relative w-0 py-10 border-4 border-primary-500 left-4 xl:left-1/2">
         {items.map((item, idx) => {
           return (
             <div className="relative pt-20" key={item.id}>

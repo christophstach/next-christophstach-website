@@ -6,7 +6,6 @@ import React from 'react'
 import Timeline from '../components/timeline/timeline'
 import { GetAllTimelineItemsQuery } from '../generated/graphcms.codegen'
 import GET_ALL_TIMELINE_ITEMS from '../graphql/operations/getAllTimelineItems.gql'
-import Default from '../layouts/default'
 import { initializeApollo } from '../lib/apolloClient'
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -17,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       initialApolloState: apolloClient.cache.extract(),
     },
-    revalidate: 1,
+    revalidate: 60,
   }
 }
 
@@ -29,13 +28,13 @@ const Education: NextPage = () => {
   }
 
   return (
-    <Default>
+    <>
       <Head>
         <title>Christoph Stach: Education</title>
       </Head>
 
       {data?.timelineItems && <Timeline items={data.timelineItems} />}
-    </Default>
+    </>
   )
 }
 

@@ -6,7 +6,6 @@ import React from 'react'
 
 import { GetAllHomeArticlesQuery } from '../generated/graphcms.codegen'
 import GET_ALL_HOME_ARTICLES from '../graphql/operations/getAllHomeArticles.gql'
-import Default from '../layouts/default'
 import { initializeApollo } from '../lib/apolloClient'
 import markdownToHtml from '../lib/markdownToHtml'
 
@@ -20,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       initialApolloState: apolloClient.cache.extract(),
     },
-    revalidate: 1,
+    revalidate: 60,
   }
 }
 
@@ -42,7 +41,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <Default>
+    <>
       <Head>
         <title>Christoph Stach: Home</title>
       </Head>
@@ -73,7 +72,7 @@ const Home: NextPage = () => {
           })
         )}
       </div>
-    </Default>
+    </>
   )
 }
 

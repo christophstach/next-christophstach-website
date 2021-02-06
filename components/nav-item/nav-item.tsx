@@ -13,25 +13,31 @@ const NavItem: React.FC<Props> = (props) => {
 
   const mode = props.mode ? props.mode : 'base'
 
-  let activeClass, normalClass
-
-  if (mode === 'base') {
-    activeClass = `bg-gray-900 text-white px-3 py-2 rounded-md text-base font-medium`
-    normalClass = `text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`
-  } else if (mode === 'sm') {
-    activeClass = 'bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
-    normalClass =
-      'text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-  }
-
   // pages/index.js will be matched via props.href
   // pages/about.js will be matched via props.href
   // pages/[slug].js will be matched via props.as
-  const className = asPath === props.href || asPath === props.as ? activeClass : normalClass
+  const active = asPath === props.href || asPath === props.as
 
   return (
-    <Link href={props.href}>
-      <a className={className}>{props.text}</a>
+    <Link href={props.href} shallow>
+      <a
+        className={`
+          transition-all duration-1000 ease-in-out
+          ${
+            active
+              ? {
+                  base: `bg-gray-900 text-white px-3 py-2 rounded-md text-base font-medium`,
+                  sm: `bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium`,
+                }[mode]
+              : {
+                  base: `text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`,
+                  sm: `text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`,
+                }[mode]
+          }
+        `}
+      >
+        {props.text}
+      </a>
     </Link>
   )
 }

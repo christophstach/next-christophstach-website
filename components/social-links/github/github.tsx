@@ -6,7 +6,7 @@ const GitHub: React.FC<Props> = (props) => {
   return (
     <a href={props.url}>
       <svg
-        className="w-10 h-10 p-1 mx-1 text-white border-2 border-white border-solid rounded-full hover:text-gray-100 hover:border-gray-100"
+        className="w-8 h-8 p-1 mx-1 text-white border-2 border-white border-solid rounded-full hover:text-gray-100 hover:border-gray-100"
         viewBox="0 0 24 24"
       >
         <path

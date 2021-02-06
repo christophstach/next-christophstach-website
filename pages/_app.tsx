@@ -1,21 +1,13 @@
 import '../styles/globals.css'
 
 import { ApolloProvider } from '@apollo/client'
-import { motion, Variants } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import Default from '../layouts/default'
 import { useApollo } from '../lib/apolloClient'
 
-const variants: Variants = {
-  pageInitial: {
-    opacity: 0,
-  },
-  pageAnimate: {
-    opacity: 1,
-  },
-}
-function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = useApollo(pageProps.initialApolloState)
 
   return (
@@ -41,14 +33,9 @@ function MyApp({ Component, pageProps, router }: AppProps): JSX.Element {
         <meta name="theme-color" content="#317EFB" />
       </Head>
 
-      <motion.div
-        key={router.route}
-        initial="pageInitial"
-        animate="pageAnimate"
-        variants={variants}
-      >
+      <Default>
         <Component {...pageProps} />
-      </motion.div>
+      </Default>
     </ApolloProvider>
   )
 }
